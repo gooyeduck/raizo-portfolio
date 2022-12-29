@@ -1,12 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import ArtGallery from './components/ArtGallery/ArtGallery'
+
+import { BrowserRouter } from 'react-router-dom'
+import BaseLayout from './components/BaseLayout/BaseLayout'
+import './App.module.scss'
+
 
 function App() {
 
   return (
     <div className="App">
-      <ArtGallery/>
+      <BrowserRouter>
+      <BaseLayout/>
+      </BrowserRouter>
+     
     </div>
   )
 }

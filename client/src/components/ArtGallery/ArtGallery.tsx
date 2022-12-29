@@ -18,25 +18,22 @@ export default function ArtGallery() {
     width,
     height,
     srcSet: images.map((image) => ({
-        src: image.src,
-        width: image.width,
-        height: image.height,
+      src: image.src,
+      width: image.width,
+      height: image.height,
     })),
-}));
+  }));
   return (
-    <div>
-      {/* {imageList.map((image) =>
-        <img src={image.url} alt="image.asset_id" />
-      )} */}
-      <PhotoAlbum photos={photos} layout="rows" targetRowHeight={500} onClick={({ index }) => setIndex(index)}/>
+    <div style={{ margin: "10vh 10vw" }}>
+      <PhotoAlbum photos={photos}  layout="rows" targetRowHeight={500} onClick={({ index }) => setIndex(index)} />
       <Lightbox
-                slides={slides}
-                open={index >= 0}
-                index={index}
-                close={() => setIndex(-1)}
-                // enable optional lightbox plugins
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-            />
+        slides={slides}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        // enable optional lightbox plugins
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+      />
     </div>
   );
 }

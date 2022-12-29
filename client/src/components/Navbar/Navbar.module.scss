@@ -1,0 +1,22 @@
+@import "../variables.modules.scss";
+
+nav {
+  transition: $transition;
+}
+
+.active {
+  border: 3px solid;
+  padding:5px;
+  border-radius: 10px;
+  border-image-slice: 1;
+}
+
+li {
+  transition: $transition;
+  color: $dark;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: $transition;
+  }
+}
