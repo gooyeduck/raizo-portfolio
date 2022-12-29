@@ -12,7 +12,7 @@ const photos = imageList.resources.map((photo) => {
         images: breakpoints.map((breakpoint) => {
             const height = Math.round((photo.height / photo.width) * breakpoint);
             return {
-                src: photo.secure_url,
+                src: photo.url,
                 width: breakpoint,
                 height,
             };
