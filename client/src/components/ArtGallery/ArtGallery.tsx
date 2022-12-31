@@ -3,6 +3,7 @@ import Gallery from 'react-photo-gallery';
 import photos from './photos';
 import Lightbox from 'yet-another-react-lightbox';
 import "yet-another-react-lightbox/styles.css";
+import photo2 from '../../../mock-api2.json'
 
 // import optional lightbox plugins
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -13,25 +14,21 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 export default function ArtGallery() {
   const [index, setIndex] = useState(-1);
-  const openLightbox = useCallback((_:any, { index }: { index: number }) => {
+  const openLightbox = useCallback((_: any, { index }: { index: number }) => {
     setIndex(index);
   }, []);
-  
-  const slides = photos.map(({ src, width, height, images }) => ({
+
+  const photo = photos.map(({ src, width, height}) => ({
     src,
     width,
     height,
-    srcSet: images.map((image) => ({
-      src: image.src,
-      width: image.width,
-      height: image.height,
-    })),
   }));
   return (
     <div style={{ margin: "10vh 10vw" }}>
-      <Gallery photos={photos} targetRowHeight={500} onClick={openLightbox} />
+      <Gallery photos={photo} targetRowHeight={500} onClick={openLightbox} />
       <Lightbox
-        slides={slides}
+        styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
+        slides={photos}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
