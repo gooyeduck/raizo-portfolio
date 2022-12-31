@@ -19,5 +19,4 @@ const photos = imageList.resources.map((photo) => {
         }),
     };
 });
-console.log(photos)
 export default photos;
