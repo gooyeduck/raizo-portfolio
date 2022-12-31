@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import ArtGallery from '../ArtGallery/ArtGallery';
+import Footer from '../Footer/Footer';
 // import Home from './home/Home';
 
 export default function BaseLayout() {
@@ -36,6 +37,7 @@ export default function BaseLayout() {
           </Routes>
         </Grid>
       </Grid>
+      <Footer/>
     </Box>
   );
 }
