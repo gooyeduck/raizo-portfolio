@@ -6,7 +6,8 @@ const useStyles = makeStyles({
 
   footerStyles: {
     color: 'white',
-    background: '#2160A0',
+    background: '#1c1c1c',
+    fontSize:"1.5em",
   },
   bottom: {
     textAlign: 'center',
